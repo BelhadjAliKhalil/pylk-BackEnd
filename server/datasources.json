@@ -1,0 +1,22 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "pylk",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "myEmailDataSource": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "pylk",
+    "password": "",
+    "name": "myEmailDataSource",
+    "user": "",
+    "connector": "mongodb"
+  }
+}

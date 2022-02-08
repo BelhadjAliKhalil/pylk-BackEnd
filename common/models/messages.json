@@ -1,0 +1,234 @@
+{
+  "name": "messages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "room_id": {
+      "type": "string",
+      "default": ""
+    },
+    "contract_id": {
+      "type": "string",
+      "default": ""
+    },
+    "produit_envoyer": {
+      "type": "string",
+      "default": ""
+    },
+    "contract_type": {
+      "type": "string",
+      "default": ""
+    },
+    "msg_id": {
+      "type": "string",
+      "id": true
+    },
+    "receiver": {
+      "type": "string",
+      "default": ""
+    },
+    "sender": {
+      "type": "string",
+      "default": ""
+    },
+    "file_name": {
+      "type": "string",
+      "defaut": ""
+    },
+    "text": {
+      "type": "string",
+      "default": ""
+    },
+    "text2": {
+      "type": "string",
+      "default": ""
+    },
+    "sent_at": {
+      "type": "string",
+      "default": ""
+    },
+    "advantages": {
+      "type": "string",
+      "default": ""
+    },
+    "starts_date": {
+      "type": "string",
+      "default": ""
+    },
+    "notif": {
+      "type": "boolean",
+      "default": false
+    },
+    "negociated": {
+      "type": "boolean",
+      "default": false
+    },
+    "brand_name": {
+      "type": "string",
+      "default": ""
+    },
+    "inf_name": {
+      "type": "string",
+      "default": ""
+    },
+    "status": {
+      "type": "string",
+      "default": "in_progress"
+    },
+    "clauses": {
+      "type": "string",
+      "default": ""
+    },
+    "end_date": {
+      "type": "string",
+      "default": ""
+    },
+    "start_time": {
+      "type": "string",
+      "default": ""
+    },
+    "end_time": {
+      "type": "string",
+      "default": ""
+    },
+    "deadligne": {
+      "type": "string",
+      "defaut": ""
+    },
+    "links": {
+      "type": [
+        {
+          "photo": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "criteres": {
+      "type": [
+        {
+          "critere": {
+            "type": "string"
+          },
+          "prix": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "reseaux": {
+      "type": {
+        "youtube_integre": {
+          "type": "boolean",
+          "default": false
+        },
+        "youtube_dedie": {
+          "type": "boolean",
+          "default": false
+        },
+        "fb": {
+          "type": "boolean",
+          "default": false
+        },
+        "snapchat": {
+          "type": "boolean",
+          "default": false
+        },
+        "insta_stories": {
+          "type": "boolean",
+          "default": false
+        },
+        "musical": {
+          "type": "boolean",
+          "default": false
+        },
+        "linkedin": {
+          "type": "boolean",
+          "default": false
+        },
+        "insta": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {
+        "youtube_integre": {
+          "type": "boolean",
+          "default": false
+        },
+        "youtube_dedie": {
+          "type": "boolean",
+          "default": false
+        },
+        "fb": {
+          "type": "boolean",
+          "default": false
+        },
+        "snapchat": {
+          "type": "boolean",
+          "default": false
+        },
+        "insta_stories": {
+          "type": "boolean",
+          "default": false
+        },
+        "musical": {
+          "type": "boolean",
+          "default": false
+        },
+        "linkedin": {
+          "type": "boolean",
+          "default": false
+        },
+        "insta": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "attachement": {
+      "type": "string",
+      "default": ""
+    },
+    "prix": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {
+    "rooms": {
+      "type": "hasOne",
+      "model": "room",
+      "foreignKey": "room_id"
+    },
+    "contract": {
+      "type": "belongsTo",
+      "model": "contract",
+      "foreignKey": "contract_id"
+    },
+    "brandRegisters": {
+      "type": "hasMany",
+      "model": "brand_register",
+      "foreignKey": "brand_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

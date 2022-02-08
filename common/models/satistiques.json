@@ -1,0 +1,29 @@
+{
+  "name": "statistiques",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "stat_id": {
+      "type": "string"
+    },
+    "ca_day": {
+      "type": "number",
+      "default": 0
+    },
+    "ca_week": {
+      "type": "number",
+      "default": 0
+    },
+    "ca_month": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

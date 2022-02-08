@@ -1,0 +1,69 @@
+{
+  "name": "agence_register",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "agence_id": {
+      "type": "string",
+      "id": true,
+      "description": "agence ID"
+    },
+    "account_id": {
+      "type": "string",
+      "required": true
+    },
+    "agency_name": {
+      "type": "string",
+      "required": true
+    },
+    "contact_name": {
+      "type": "string",
+      "default": ""
+    },
+    "account_image": {
+      "type": "string",
+      "default": ""
+    },
+    "inf_list": {
+      "type": [
+        {
+          "insta_username": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accounts": {
+      "type": "hasOne",
+      "model": "pylk_account",
+      "foreignKey": "account_id"
+    },
+    "inf": {
+      "type": "hasMany",
+      "model": "inf_register",
+      "foreignKey": "inf_list.insta_username"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,113 @@
+{
+  "name": "pylk_account",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pylk_account_id": {
+      "type": "string",
+      "id": true,
+      "description": "Account ID"
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "usertype": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "agenceRegisters": {
+      "type": "hasOne",
+      "model": "agence_register",
+      "foreignKey": "account_id"
+    },
+    "brandRegisters": {
+      "type": "hasOne",
+      "model": "brand_register",
+      "foreignKey": "account_id"
+    },
+    "infRegisters": {
+      "type": "hasOne",
+      "model": "inf_register",
+      "foreignKey": "account_id"
+    },
+    "rooms": {
+      "type": "hasMany",
+      "model": "room",
+      "foreignKey": "user2"
+    },
+    "rooms1": {
+      "type": "hasMany",
+      "model": "room",
+      "foreignKey": "user1"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login2"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "inf_create"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "agency_create"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "brand_create"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

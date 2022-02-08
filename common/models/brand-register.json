@@ -1,0 +1,204 @@
+{
+  "name": "brand_register",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "brand_id": {
+      "type": "string",
+      "id": true,
+      "description": "brand ID"
+    },
+    "brand_name": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": true
+    },
+    "brand_type": {
+      "type": "string",
+      "default": ""
+    },
+    "category": {
+      "type": [],
+      "default": []
+    },
+    "categorie_list": {
+      "type": [],
+      "default": [
+        "Santé",
+        "Humour",
+        "Musique",
+        "Actualités",
+        "Technologies",
+        "Sports",
+        "Voyage",
+        "Santé",
+        "Véhicules",
+        "Rencontres",
+        "Santé",
+        "jeux",
+        "Santé",
+        "Education",
+        "Beauté",
+        "Alimentation",
+        "Art",
+        "Spectacle"
+      ]
+    },
+    "country": {
+      "type": "string",
+      "default": ""
+    },
+    "website": {
+      "type": "string",
+      "default": ""
+    },
+    "account_image": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "adress": {
+      "type": "string",
+      "default": ""
+    },
+    "type_carte": {
+      "type": "string",
+      "default": ""
+    },
+    "num_carte": {
+      "type": "number",
+      "default": 0
+    },
+    "nom_carte": {
+      "type": "string",
+      "default": ""
+    },
+    "date_exp": {
+      "type": "string",
+      "default": ""
+    },
+    "ccv": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_fname": {
+      "type": "string",
+      "default": ""
+    },
+    "banklname": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_adress": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_zip": {
+      "type": "number",
+      "default": 0
+    },
+    "bank_country": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_iban": {
+      "type": "string",
+      "default": ""
+    },
+    "accounts_id": {
+      "type": [
+        {
+          "account": {
+            "type": "object"
+          }
+        }
+      ],
+      "default": []
+    },
+    "contract_list": {
+      "type": [
+        {
+          "contract_id": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "photos": {
+      "type": [
+        {
+          "photo": {
+            "type": "string"
+          },
+          "legende": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "compagne": {
+      "type": [
+        {
+          "inf": {
+            "type": "object"
+          }
+        }
+      ],
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contracts": {
+      "type": "hasMany",
+      "model": "contract",
+      "foreignKey": "contract_list.contract_id"
+    },
+    "compayn": {
+      "type": "hasMany",
+      "model": "compayn",
+      "foreignKey": "compayn_id"
+    },
+    "rooms": {
+      "type": "hasMany",
+      "model": "room",
+      "foreignKey": "room_id"
+    },
+    "messages": {
+      "type": "hasMany",
+      "model": "messages",
+      "foreignKey": "msg_id"
+    },
+    "pylkAccount": {
+      "type": "belongsTo",
+      "model": "pylk_account",
+      "foreignKey": "pylk_account_id"
+    },
+    "notifications": {
+      "type": "hasMany",
+      "model": "notification",
+      "foreignKey": "notif_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

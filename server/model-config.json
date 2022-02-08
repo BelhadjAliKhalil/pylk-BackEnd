@@ -1,0 +1,78 @@
+{
+    "_meta": {
+        "sources": [
+            "loopback/common/models",
+            "loopback/server/models",
+            "../common/models",
+            "./models"
+        ],
+        "mixins": [
+            "loopback/common/mixins",
+            "loopback/server/mixins",
+            "../common/mixins",
+            "./mixins"
+        ]
+    },
+    "AccessToken": {
+        "dataSource": "db",
+        "public": false
+    },
+    "ACL": {
+        "dataSource": "db",
+        "public": false
+    },
+    "RoleMapping": {
+        "dataSource": "db",
+        "public": false,
+        "options": {
+            "strictObjectIDCoercion": true
+        }
+    },
+    "Role": {
+        "dataSource": "db",
+        "public": false
+    },
+    "User": {
+        "dataSource": "db"
+    },
+    "agence_register": {
+        "dataSource": "db",
+        "public": true
+    },
+    "brand_register": {
+        "dataSource": "db",
+        "public": true
+    },
+    "inf_register": {
+        "dataSource": "db",
+        "public": true
+    },
+    "contract": {
+        "dataSource": "db",
+        "public": true
+    },
+    "room": {
+        "dataSource": "db",
+        "public": true
+    },
+    "messages": {
+        "dataSource": "db",
+        "public": true
+    },
+    "pylk_account": {
+        "dataSource": "db",
+        "public": true
+    },
+    "compayn": {
+        "dataSource": "db",
+        "public": true
+    },
+    "notification": {
+        "dataSource": "db",
+        "public": true
+    },
+    "statistiques": {
+        "dataSource": "db",
+        "public": true
+    }
+}

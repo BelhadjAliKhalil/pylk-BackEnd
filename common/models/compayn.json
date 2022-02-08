@@ -1,0 +1,42 @@
+{
+  "name": "compayn",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "compayn_name": {
+      "type": "string",
+      "required": true
+    },
+    "inf_list": {
+      "type": [
+        "object"
+      ],
+      "default": []
+    },
+    "compayn_id": {
+      "type": "string",
+      "id": true
+    },
+    "brand_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "brand": {
+      "type": "hasOne",
+      "model": "Brand_register",
+      "foreignKey": "brand_id"
+    },
+    "infRegisters": {
+      "type": "hasMany",
+      "model": "inf_register",
+      "foreignKey": "inf_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

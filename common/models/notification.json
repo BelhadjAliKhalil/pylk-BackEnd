@@ -1,0 +1,53 @@
+{
+  "name": "notification",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "notif_id": {
+      "type": "string",
+      "id": true
+    },
+    "user_off": {
+      "type": "string",
+      "id": true
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "seen": {
+      "type": "boolean",
+      "default": false
+    },
+    "action": {
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "type": "boolean",
+      "default": false
+    },
+    "user_id": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {
+    "contract": {
+      "type": "belongsTo",
+      "model": "contract",
+      "foreignKey": "contract_id"
+    },
+    "brandRegisters": {
+      "type": "hasMany",
+      "model": "brand_register",
+      "foreignKey": "brand_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

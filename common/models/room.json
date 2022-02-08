@@ -1,0 +1,67 @@
+{
+  "name": "room",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "room_id": {
+      "type": "string",
+      "id": true
+    },
+    "user1": {
+      "type": "string",
+      "required": true
+    },
+    "user2": {
+      "type": "string",
+      "required": true
+    },
+    "contract_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account1": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "user1"
+    },
+    "account2": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "user2"
+    },
+    "messages": {
+      "type": "hasMany",
+      "model": "messages",
+      "foreignKey": "msg_id"
+    },
+    "brandRegisters": {
+      "type": "hasMany",
+      "model": "brand_register",
+      "foreignKey": "brand_id"
+    },
+    "inf_id": {
+      "type": "hasMany",
+      "model": "inf_register",
+      "foreignKey": "inf_id"
+    },
+    "contract": {
+      "type": "belongsTo",
+      "model": "contract",
+      "foreignKey": "contract_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

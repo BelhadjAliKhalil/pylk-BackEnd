@@ -1,0 +1,326 @@
+{
+  "name": "contract",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "id": true,
+      "description": "contract ID"
+    },
+    "inf_id": {
+      "type": "string",
+      "defaut": ""
+    },
+    "brand_id": {
+      "type": "string"
+    },
+    "brand_image": {
+      "type": "string",
+      "default": ""
+    },
+    "inf_image": {
+      "type": "string",
+      "default": ""
+    },
+    "brand_name": {
+      "type": "string",
+      "defaut": ""
+    },
+    "created_at": {
+      "type": "string",
+      "defaut": ""
+    },
+    "waiting": {
+      "type": "boolean",
+      "default": false
+    },
+    "litige": {
+      "type": "boolean",
+      "default": false
+    },
+    "note_brand": {
+      "type": "number",
+      "defaut": 0
+    },
+    "deadligne": {
+      "type": "string",
+      "defaut": ""
+    },
+    "attachements": {
+      "type": "string",
+      "defaut": ""
+    },
+    "file_name": {
+      "type": "string",
+      "defaut": ""
+    },
+    "cgu_brand": {
+      "type": "boolean",
+      "default": false
+    },
+    "cgu_inf": {
+      "type": "boolean",
+      "default": false
+    },
+    "note_inf": {
+      "type": "number",
+      "default": 0
+    },
+    "cloture": {
+      "type": "boolean",
+      "default": false
+    },
+    "corfirmed_promo": {
+      "type": "boolean",
+      "default": false
+    },
+    "confirm_brand": {
+      "type": "boolean",
+      "default": false
+    },
+    "confirm_inf": {
+      "type": "boolean",
+      "default": false
+    },
+    "inf_name": {
+      "type": "string",
+      "default": ""
+    },
+    "starts_date": {
+      "type": "string",
+      "default": ""
+    },
+    "end_date": {
+      "type": "string",
+      "default": ""
+    },
+    "start_time": {
+      "type": "string",
+      "default": ""
+    },
+    "end_time": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "proof": {
+      "type": "string",
+      "default": ""
+    },
+    "produit_envoyer": {
+      "type": "string",
+      "default": ""
+    },
+    "type": {
+      "type": "string",
+      "default": ""
+    },
+    "status": {
+      "type": "string",
+      "default": "in_progress"
+    },
+    "pref_evo": {
+      "type": "string",
+      "default": ""
+    },
+    "links": {
+      "type": [
+        {
+          "photo": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "link": {
+      "type": "boolean",
+      "default": true
+    },
+    "signed": {
+      "type": "boolean",
+      "default": false
+    },
+    "paid": {
+      "type": "boolean",
+      "default": false
+    },
+    "clauses": {
+      "type": "string",
+      "default": ""
+    },
+    "box_received": {
+      "type": "boolean",
+      "default": false
+    },
+    "tracking_link": {
+      "type": "string",
+      "default": ""
+    },
+    "box_number": {
+      "type": "string",
+      "default": ""
+    },
+    "prix": {
+      "type": "string",
+      "default": "0"
+    },
+    "charge": {
+      "type": "string",
+      "default": ""
+    },
+    "panier": {
+      "type": "string",
+      "default": ""
+    },
+    "reseaux": {
+      "type": {
+        "youtube_integre": {
+          "type": "boolean",
+          "default": false
+        },
+        "youtube_dedie": {
+          "type": "boolean",
+          "default": false
+        },
+        "fb": {
+          "type": "boolean",
+          "default": false
+        },
+        "snapchat": {
+          "type": "boolean",
+          "default": false
+        },
+        "insta_stories": {
+          "type": "boolean",
+          "default": false
+        },
+        "musical": {
+          "type": "boolean",
+          "default": false
+        },
+        "linkedin": {
+          "type": "boolean",
+          "default": false
+        },
+        "insta": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {
+        "youtube_integre": false,
+        "youtube_dedie": false,
+        "fb": false,
+        "snapchat": false,
+        "insta_stories": false,
+        "musical": false,
+        "linkedin": false,
+        "insta": false
+      }
+    },
+    "criteres": {
+      "type": [
+        {
+          "critere": {
+            "type": "string"
+          },
+          "prix": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "pay_history": {
+      "type": {
+        "date": {
+          "type": "date"
+        },
+        "card_num": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "iban": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        }
+      },
+      "default": {}
+    }
+  },
+  "validations": [],
+  "relations": {
+    "brandRegister": {
+      "type": "belongsTo",
+      "model": "brand_register",
+      "foreignKey": "brand_id"
+    },
+    "infRegister": {
+      "type": "belongsTo",
+      "model": "inf_register",
+      "foreignKey": "insta_username"
+    },
+    "paymentHistories": {
+      "type": "hasOne",
+      "model": "payment_history",
+      "foreignKey": "pay_his_id"
+    },
+    "rooms": {
+      "type": "belongsTo",
+      "model": "room",
+      "foreignKey": "room_id"
+    },
+    "messages": {
+      "type": "hasMany",
+      "model": "messages",
+      "foreignKey": "msg_id"
+    },
+    "notifications": {
+      "type": "hasMany",
+      "model": "notification",
+      "foreignKey": "notif_id"
+    },
+    "brandRegisters": {
+      "type": "hasOne",
+      "model": "brand_register",
+      "foreignKey": "brand_id"
+    },
+    "infRegisters": {
+      "type": "hasOne",
+      "model": "inf_register",
+      "foreignKey": "inf_id"
+    },
+    "statistiques": {
+      "type": "belongsTo",
+      "model": "statistiques",
+      "foreignKey": "stat_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

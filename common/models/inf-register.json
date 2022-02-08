@@ -1,0 +1,575 @@
+{
+  "name": "inf_register",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "inf_id": {
+      "type": "string",
+      "id": true,
+      "description": "User ID"
+    },
+    "account_id": {
+      "type": "string"
+    },
+    "account_image": {
+      "type": "string",
+      "default": ""
+    },
+    "langage": {
+      "type": "string",
+      "default": ""
+    },
+    "freq": {
+      "type": "number",
+      "default": 0
+    },
+    "createdAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "inf_name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string",
+      "default": ""
+    },
+    "country": {
+      "type": "string",
+      "default": ""
+    },
+    "city": {
+      "type": "string",
+      "default": ""
+    },
+    "gender": {
+      "type": "string",
+      "default": ""
+    },
+    "category": {
+      "type": [],
+      "default": []
+    },
+    "categorie_list": {
+      "type": [],
+      "default": [
+        "Santé",
+        "Humour",
+        "Musique",
+        "Actualités",
+        "Technologies",
+        "Sports",
+        "Voyage",
+        "Santé",
+        "Véhicules",
+        "Rencontres",
+        "Santé",
+        "jeux",
+        "Santé",
+        "Education",
+        "Beauté",
+        "Alimentation",
+        "Art",
+        "Spectacle"
+      ]
+    },
+    "categorie": {
+      "type": "string",
+      "default": ""
+    },
+    "age_max": {
+      "type": "number",
+      "default": 0
+    },
+    "prix_min": {
+      "type": "number",
+      "default": 0
+    },
+    "prix_max": {
+      "type": "number",
+      "default": 0
+    },
+    "age_min": {
+      "type": "number",
+      "default": 0
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
+    },
+    "total_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "lieu": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "website": {
+      "type": "string",
+      "default": ""
+    },
+    "insta_username": {
+      "type": "string",
+      "default": ""
+    },
+    "note": {
+      "type": "number",
+      "default": 0
+    },
+    "Mois_de_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "moy_post": {
+      "type": "number",
+      "default": 0
+    },
+    "Nombre_de_post": {
+      "type": "number",
+      "default": 0
+    },
+    "Ratio_followers_like": {
+      "type": "number",
+      "default": 0
+    },
+    "Nombre_de_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "insta_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "insta_stories_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "fb_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "insta_likes": {
+      "type": "number",
+      "default": 0
+    },
+    "youtube_followers": {
+      "type": "number",
+      "default": 0
+    },
+    "fb": {
+      "type": {
+        "username": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "stat": {
+          "type": {}
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "insta": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "views": {
+          "type": "number",
+          "default": 0
+        },
+        "followers": {
+          "type": "number",
+          "default": 0
+        },
+        "price": {
+          "type": "number",
+          "default": 0
+        },
+        "stories_price": {
+          "type": "number",
+          "default": 0
+        },
+        "stat": {
+          "type": {}
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "views": 0,
+        "followers": 0,
+        "price": 0,
+        "stories_price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "musical": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "views": {
+          "type": "number",
+          "default": 0
+        },
+        "price": {
+          "type": "number",
+          "default": 0
+        },
+        "stat": {
+          "type": {}
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "youtube": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "views": {
+          "type": "number",
+          "default": 0
+        },
+        "price": {
+          "type": "number",
+          "default": 0
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "snapchat": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "views": {
+          "type": "number",
+          "default": 0
+        },
+        "price": {
+          "type": "number",
+          "default": 0
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "linkedin": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "link": {
+          "type": "string",
+          "default": ""
+        },
+        "price": {
+          "type": "number",
+          "default": ""
+        },
+        "stat": {
+          "type": {}
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "link": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "twitter": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "link": {
+          "type": "string",
+          "default": ""
+        },
+        "price": {
+          "type": "number",
+          "default": ""
+        },
+        "stat": {
+          "type": {}
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "link": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "blog": {
+      "type": {
+        "username": {
+          "type": "string",
+          "default": ""
+        },
+        "link": {
+          "type": "string",
+          "default": ""
+        },
+        "price": {
+          "type": "number",
+          "default": ""
+        },
+        "stat": {
+          "type": {}
+        },
+        "pricipal": {
+          "type": "boolean"
+        }
+      },
+      "default": {
+        "username": "",
+        "link": "",
+        "views": 0,
+        "price": 0,
+        "stat": {
+          "file": "",
+          "extension": "",
+          "name": ""
+        },
+        "principal": false
+      }
+    },
+    "audience": {
+      "type": "number",
+      "default": 0
+    },
+    "demographie": {
+      "type": "number",
+      "default": 0
+    },
+    "moy_likes": {
+      "type": "number",
+      "default": 0
+    },
+    "trois_mois": {
+      "type": {
+        "followers": "number",
+        "last_update": "string"
+      },
+      "default": {
+        "followers": 0,
+        "last_update": ""
+      }
+    },
+    "progression": {
+      "type": "number",
+      "default": 0
+    },
+    "countries": {
+      "type": [
+        {
+          "number": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "bank_fname": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_lname": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_adress": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_iban": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_country": {
+      "type": "string",
+      "default": ""
+    },
+    "bank_zip": {
+      "type": "string",
+      "default": ""
+    },
+    "bonus_card": {
+      "type": [
+        {
+          "number": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "contract_list": {
+      "type": [
+        {
+          "contact_id": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    },
+    "collaboration": {
+      "type": [
+        {
+          "brand_id": {
+            "type": "string"
+          },
+          "account_image": {
+            "type": "string"
+          }
+        }
+      ],
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accounts": {
+      "type": "hasOne",
+      "model": "pylk_account",
+      "foreignKey": "account_id"
+    },
+    "contracts": {
+      "type": "hasMany",
+      "model": "contract",
+      "foreignKey": "contract_list.contract_id"
+    },
+    "rooms": {
+      "type": "hasMany",
+      "model": "room",
+      "foreignKey": "room_id"
+    },
+    "contract": {
+      "type": "belongsTo",
+      "model": "contract",
+      "foreignKey": "contract_id"
+    },
+    "compayns": {
+      "type": "hasMany",
+      "model": "compayn",
+      "foreignKey": "compayn_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
